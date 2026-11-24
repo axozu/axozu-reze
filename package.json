@@ -1,0 +1,59 @@
+{
+  "name": "axozu-blink",
+  "productName": "axozu blink",
+  "version": "1.0.0",
+  "description": "Desktop animation: blinking character with hair sway and breathing, rendered in real time with WebGL",
+  "main": "main.js",
+  "private": true,
+  "author": "axozu",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win portable",
+    "build:mac": "electron-builder --mac dmg"
+  },
+  "build": {
+    "appId": "com.axozu.blink",
+    "productName": "axozu blink",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "easing.js",
+      "assets/open.jpg",
+      "assets/half.jpg",
+      "assets/closed.jpg",
+      "assets/hair_mask.png",
+      "assets/flow_open_half.png",
+      "assets/flow_half_open.png",
+      "assets/flow_half_closed.png",
+      "assets/flow_closed_half.png",
+      "build/icon.png",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "build/icon.png"
+    },
+    "portable": {
+      "artifactName": "axozu-blink-${version}-portable.exe"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.entertainment",
+      "icon": "build/icon.png"
+    },
+    "dmg": {
+      "artifactName": "axozu-blink-${version}.dmg"
+    }
+  },
+  "devDependencies": {
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0"
+  }
+}

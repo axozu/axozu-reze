@@ -1,0 +1,16 @@
+# зависимости и сборки — восстанавливаются через npm install / npm run build
+node_modules/
+dist/
+
+# исходные материалы, приложению не нужны
+_source/
+TZ.md
+
+# мусор ОС и редакторов
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
+__pycache__/
